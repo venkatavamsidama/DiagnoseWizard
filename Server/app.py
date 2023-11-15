@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify
 import pickle
 import numpy as np
 import cv2
-
+import tensorflow as tf
 app = Flask(__name__)
 
 
@@ -89,6 +89,28 @@ def diagnose_Pneumonia():
         return jsonify({'status':'success','probability': output})
     except Exception as e:
         return jsonify({'error': str(e)})
+    
+
+#Covid Controller
+
+@app.route('/diagnose_Covid', methods=['POST'])
+def diagnose_Covid():
+    try:
+        if 'image' not in request.files:
+            return jsonify({'error': 'No file part'})
+        Covid_model=tf.keras.models.load_model('./Ml Models/Covid2.h5')    
+        image = request.files['image'].read()
+  
+        nparr = np.frombuffer(image, np.uint8)
+        image = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+        image = cv2.resize(image, (64, 64))
+        image = np.expand_dims(image, axis=0)
+        prediction = Covid_model.predict(image)
+        output = '{0:.{1}f}'.format(prediction[0][1], 2)
+        # print(output)
+        return jsonify({'status':'success','probability': output})
+    except Exception as e:
+        return jsonify({'error': str(e)})    
 
 if __name__ == '__main__':
     app.run(debug=True)
