@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import {useNavigate } from "react-router-dom";
-import { ToastContainer,toast } from 'react-toastify';
+import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from 'react-toastify';
 
 const SignUpPage = () => {
     const navigate = useNavigate();
@@ -42,7 +42,7 @@ const SignUpPage = () => {
                 }),
             })
             const data = await response.json();
-            if (data.status==='success') {
+            if (data.status === 'success') {
                 console.log("signed in");
                 sessionStorage.setItem("jwt", data.token);
                 sessionStorage.setItem("encryptedData", data.data.encryptedData);
@@ -51,10 +51,10 @@ const SignUpPage = () => {
             if (!response.ok) {
                 console.log("The status code :", response.status)
                 console.log("signup failed");
-                if (response.status === 401) {
-                    toast.error("passwords doesn't match");
-                    
-                }
+
+                toast.error("passwords doesn't match");
+
+
                 const errorData = await response.json();
                 throw new Error(errorData.error);
 

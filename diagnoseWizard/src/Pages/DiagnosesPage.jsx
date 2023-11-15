@@ -808,12 +808,6 @@ const DropdownForm = () => {
                     </div>
                 );
 
-            case 'Parkinsons':
-                return (
-                    <form>
-                        <input type="text" placeholder='FOR PARKINSONS' />
-                    </form>
-                );
 
             default:
                 return null;
@@ -831,7 +825,7 @@ const DropdownForm = () => {
                         <option value="Thyroid">Thyroid</option>
                         <option value="Pneumonia">Pneumonia</option>
                         <option value="Diabetes">Diabetes</option>
-                        <option value="Parkinsons">Parkinsons</option>
+
                     </select>
                 </div>
                 <div className='text-center shadow-lg  px-[35px] py-[20px] rounded-lg w-[800px] '>

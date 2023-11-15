@@ -3,6 +3,7 @@ import pickle
 import numpy as np
 import cv2
 import tensorflow as tf
+from joblib import load
 app = Flask(__name__)
 
 
@@ -106,11 +107,10 @@ def diagnose_Covid():
         image = cv2.resize(image, (64, 64))
         image = np.expand_dims(image, axis=0)
         prediction = Covid_model.predict(image)
-        output = '{0:.{1}f}'.format(prediction[0][1], 2)
-        # print(output)
+        output = '{0:.{1}f}'.format(prediction[0][0], 2)
         return jsonify({'status':'success','probability': output})
     except Exception as e:
-        return jsonify({'error': str(e)})    
+        return jsonify({'error': str(e)})     
 
 if __name__ == '__main__':
     app.run(debug=True)
