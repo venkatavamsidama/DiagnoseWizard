@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import DiagnosesHeading from '../Components/DiagnosesHeading';
 import { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
-import { ToastContainer,toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 
 const DropdownForm = () => {
     const jwt = sessionStorage.getItem('jwt');
@@ -15,8 +15,9 @@ const DropdownForm = () => {
     const [prob, setprob] = useState("");
     const [probColour, setProbColour] = useState("ml-[10px] text-[#07f79f]");
     const [visibility, setVisibility] = useState("font-bold text-[30px] hidden ");
-    const [selectedOption, setSelectedOption] = useState('Diabetes');
+    const [selectedOption, setSelectedOption] = useState('Covid 19');
     const handleDropdownChange = (event) => {
+        setVisibility("font-bold text-[30px] hidden");
         setSelectedOption(event.target.value);
     };
     //probability text colour
@@ -241,7 +242,47 @@ const DropdownForm = () => {
         }
 
     };
+    // Covid states and request
+    const [covidImage, setCovidImage] = useState('');
+    const handleCovidInputChange = (e) => {
+        setCovidImage(e.target.files[0]);
+        setVisibility("font-bold text-[30px] hidden");
+    }
 
+    const handleCovidFormChange = async (e) => {
+        if (jwt) {
+            e.preventDefault();
+            try {
+                const formData = new FormData();
+                formData.append('image', covidImage);
+
+                const response = await fetch('http://127.0.0.1:5000/diagnose_Covid', {
+                    method: 'POST',
+                    body: formData,
+                    credentials: 'include',
+                });
+
+                const data = await response.json();
+                console.log(data)
+                if (data.status === 'success') {
+                    setVisibility("font-bold text-[30px] flex");
+                    setprob(data.probability);
+                    setCovidImage('');
+                } else if (data.status === 'failed') {
+                    console.log("The status code:", data.status);
+                    console.log("diagnose failed");
+                }
+
+            } catch (err) {
+                console.error(`Error diagnosing the user`, err.message);
+            }
+        } else {
+            navigateToLogin();
+            toast.error("Please login to use all the functions!!")
+
+        }
+
+    }
 
 
     //Breast Cancer states and request
@@ -361,9 +402,24 @@ const DropdownForm = () => {
         switch (selectedOption) {
             case 'Covid 19':
                 return (
-                    <form>
-                        <input type="text" placeholder='FOR Covid 19' />
-                    </form>
+                    <div>
+                        <form >
+                            <div>
+                                <input
+                                    type="file"
+                                    className="w-[420px]  m-[10px] h-[50px] rounded-xl my-[10px] border-[1px] border-[#979797] p-[10px]"
+                                    onChange={handleCovidInputChange}
+                                />
+
+                            </div>
+                            <button className="mx-[auto] w-[150px] h-[40px] bg-[#18A0A9] text-[#FFFFFF] font-medium rounded-xl my-[10px]" type='submit' onClick={handleCovidFormChange}>Diagnose Me</button>
+                        </form>
+                        <div>
+                            <h3 className={visibility}>
+                                The probability of you having Covid-19 is  <span className={probColour}>{prob}</span>!!
+                            </h3>
+                        </div>
+                    </div>
                 );
 
 
@@ -665,7 +721,7 @@ const DropdownForm = () => {
                         </form>
                         <div>
                             <h3 className={visibility}>
-                                The probability of you having Thyroid is  <span className={probColour}>{prob}</span>!!
+                                The probability of you having Pneumonia is  <span className={probColour}>{prob}</span>!!
                             </h3>
                         </div>
                     </div>
