@@ -70,26 +70,26 @@ const ConnectWithUs = (props) => {
     }
     return (
         <section className="py-[100px]" id="ConnectWithUs" ref={props.ConnectWithUsSection}>
-            <div className="flex text-start justify-between">
-                <div className="w-[464px]">
+            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 flex text-start justify-between">
+                <div className="sm:w-[464px]">
                     <p className="font-bold text-[12px] font-bold text-[#09A4AD]">
                         Connect With Us
                     </p>
-                    <h1 className="font-bold text-[40px] mb-[40px]">
+                    <h1 className="text-[30px] leading-[30px] sm:leading-[40px] text-[#000] font-bold flex text-start mt-[20px] sm:text-[40px] mb-[40px]">
                         Connect with DiagnoseWizard, Take a step towards prevention
                     </h1>
                     <p className="font-medium text-[20px]">
                         Far far away, behind the word mountains, far from the countries Waganda and Asgard.
                     </p>
                 </div>
-                <div className=" w-[475px] shadow-lg px-[35px] py-[20px] rounded-lg">
+                <div className=" sm:w-[475px] shadow-lg px-[35px] py-[20px] rounded-lg mt-[30px]">
                     <input
                         type="text"
                         placeholder="Name"
                         value={name}
                         ref={props.MessageNameSection}
                         onChange={handleNameChange}
-                        className="w-[400px] h-[50px] rounded-xl my-[10px] border-[1px] border-[#979797] p-[10px]" />
+                        className="w-[300px] sm:w-[400px] h-[50px] rounded-xl my-[10px] border-[1px] border-[#979797] p-[10px]" />
 
 
                     <input
@@ -97,10 +97,10 @@ const ConnectWithUs = (props) => {
                         placeholder="Message"
                         value={message}
                         onChange={handleMessageChange}
-                        className="w-[400px] h-[150px] rounded-xl my-[10px] border-[1px] border-[#979797] p-[10px]" />
+                        className="w-[300px] sm:w-[400px] h-[150px] rounded-xl my-[10px] border-[1px] border-[#979797] p-[10px]" />
                     <button 
                     onClick={handleSendMessage}
-                    className="w-[400px] h-[50px] bg-[#18A0A9] text-[#FFFFFF] rounded-xl my-[10px] ">Submit Now</button>
+                    className="w-[300px] sm:w-[400px] h-[50px] bg-[#18A0A9] text-[#FFFFFF] rounded-xl my-[10px] ">Submit Now</button>
                 </div>
             </div>
         </section>
