@@ -37,7 +37,7 @@ const ServicesPage = (props) => {
                 <p className="flex justify-start text-[#09A4AD] font-bold text-[16px]">DIAGNOSES & TREATMENTS</p>
                 <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 lg:flex lg:justify-between w-[1120px]">
                     <h2 className="text-[40px] leading-[40px] sm:leading-[90px] text-[#000] font-bold flex text-start mt-[20px] sm:text-[46px] font-bold w-[400px] sm:w-[540px] text-start"> More than 40 specialty and health care diagnose</h2>
-                    <button className="text-[20px] font-bold text-[#ffffff] bg-[#00A0AA] w-[187px] h-[55px] rounded-lg " onClick={navigateToDiagnoses} > See All diagnoses</button>
+                    <button className="mt-[20px] text-[20px] font-bold text-[#ffffff] bg-[#00A0AA] w-[187px] h-[55px] rounded-lg " onClick={navigateToDiagnoses} > See All diagnoses</button>
                 </div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2">
                     {
