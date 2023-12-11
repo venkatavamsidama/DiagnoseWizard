@@ -6,10 +6,10 @@ const Home = (props) => {
         navigate("/diagnoses");
     };
     return (
-        <section className="flex font-Satoshi mt-[40px] mb-[100px] w-[100%]" id="Home" ref={props.HomeSection}>
-            <div className="flex  ">
+        <section className="grid grid-cols-1 lg:grid-cols-2 gap-4 font-Satoshi mt-[40px] mb-[100px] w-[100%]" id="Home" ref={props.HomeSection}>
+            <div className="flex mx-[auto] ">
                 <div className="w-[497px] h-[447px] bg-[#FFC567] rounded-xl shrink-0">
-            
+
 
                     <img src="/assets/image 32.svg" alt="" className="mx-[auto] mb-[30px] shrink-0 h-[480px] w-[424px] mt-[-32px] z-30" />
                 </div>
@@ -20,10 +20,10 @@ const Home = (props) => {
                     Better Health
                     Starts Here</h1>
                 <button
-                onClick={navigateToDiagnoses}
-                 className="ml-[0px] mt-[50px] bg-[#00A0AA] rounded-xl text-[20px] font-bold text-center p-[15px] text-[#FFF] " >Discover More</button>
+                    onClick={navigateToDiagnoses}
+                    className="ml-[0px] mt-[50px] bg-[#00A0AA] rounded-xl text-[20px] font-bold text-center p-[15px] text-[#FFF] " >Discover More</button>
             </div>
-           
+
         </section>
     );
 }

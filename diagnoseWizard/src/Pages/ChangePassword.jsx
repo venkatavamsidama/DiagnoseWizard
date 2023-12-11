@@ -34,10 +34,11 @@ const ChangePassword = () => {
             })
 
             if (response.ok) {
-                
+                navigateToLogin();
                 toast.success("password successfully changed!!\n Now login to continue!!");
                 sessionStorage.clear("encryptedData");
-                navigateToLogin();
+                sessionStorage.clear("jwt");
+                
 
             }
             if (!response.ok) {
