@@ -8,7 +8,7 @@ const Home = (props) => {
     return (
         <section className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 gap-4 font-Satoshi mt-[40px] mb-[100px] w-[100%]" id="Home" ref={props.HomeSection}>
             <div className="flex  ">
-                <div className="w-[417px] h-[367px] bg-[#FFC567] rounded-xl shrink-0 sm:w-[497px] sm:h-[447px]">
+                <div className="w-[380px] h-[367px] bg-[#FFC567] rounded-xl shrink-0 sm:w-[497px] sm:h-[447px]">
 
 
                     <img src="/assets/image 32.svg" alt="" className=" mb-[30px] shrink-0 h-[400px] w-[344px] mt-[-32px] z-30 sm:h-[480px] sm:w-[424px]" />
