@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 const Navbar = (props) => {
     const navigate = useNavigate();
 
@@ -58,17 +58,17 @@ const Navbar = (props) => {
                         </svg>
                     </button>
                     <div className="hidden w-full md:block md:w-auto" id="navbar-default">
-                        <ul className="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                            <li className="mr-[25px] py-2 px-3 "><Link to="/" >Home</Link></li>
-                            <li className="mr-[25px] py-2 px-3 "><Link to="/" onClick={() => scrollDown(props.AboutSection)}>About</Link></li>
-                            <li className="mr-[25px] py-2 px-3 "><Link to="/" onClick={() => scrollDown(props.ServicesPageSection)}>Diagnoses</Link></li>
-                            <li className="mr-[25px] py-2 px-3 "><Link to="/hospitals" >Hospitals</Link></li>
-                            <li className="mr-[25px] py-2 px-3 "><Link to="/" onClick={() => scrollDown(props.ConnectWithUsSection)}>Contact Us</Link></li>
-                            {(!jwt) && <li className="mr-[25px] py-2 px-3 "><Link to="/login">Login</Link></li>}
-                            {(!jwt) && <li className="mr-[25px] py-2 px-3 "><Link to="/signup">Sign Up</Link></li>}
-                            {(jwt) && <li className="mr-[25px] py-2 px-3 "><Link to="/changePass">Change Password</Link></li>}
+                        <ul className="flex text-[16px]">
+                        <li className="mr-[25px]"><Link to="/" >Home</Link></li>
+                    <li className="mr-[25px]"><Link to="/" onClick={() => scrollDown(props.AboutSection)}>About</Link></li>
+                    <li className="mr-[25px]"><Link to="/" onClick={() => scrollDown(props.ServicesPageSection)}>Diagnoses</Link></li>
+                    <li className="mr-[25px]"><Link to="/hospitals" >Hospitals</Link></li>
+                    <li className="mr-[25px]"><Link to="/" onClick={() => scrollDown(props.ConnectWithUsSection)}>Contact Us</Link></li>
+                    {(!jwt) && <li className="mr-[25px]"><Link to="/login">Login</Link></li>}
+                    {(!jwt) && <li className="mr-[25px]"><Link to="/signup">Sign Up</Link></li>}
+                    {(jwt) && <li className="mr-[25px]"><Link to="/changePass">Change Password</Link></li>}
 
-                            {(jwt) && <button className="mr-[25px] py-2 px-3  shadow-lg rounded-lg translate-y-[-5px]  bg-[#18A0A9] text-[#FFFFFF] font-medium p-[5px]" onClick={handleLogout}><a href="/login">Logout</a></button>}
+                    {(jwt) && <button className="mr-[25px] shadow-lg rounded-lg translate-y-[-5px]  bg-[#18A0A9] text-[#FFFFFF] font-medium p-[5px]" onClick={handleLogout}><a href="/login">Logout</a></button>}
                         </ul>
                     </div>
                 </div>

@@ -26,6 +26,7 @@ function App() {
   const encryptedData=sessionStorage.getItem('encryptedData');
   return (
     <div >
+    
       <Navbar message={"login successful"}
         AboutSection={AboutSection}
         HomeSection={HomeSection}
