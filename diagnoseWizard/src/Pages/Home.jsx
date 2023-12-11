@@ -14,9 +14,10 @@ const Home = (props) => {
                     <img src="/assets/image 32.svg" alt="" className="mx-[auto] mb-[30px] shrink-0 h-[400px] w-[344px] mt-[-32px] z-30 sm:h-[480px] sm:w-[424px]" />
                 </div>
             </div>
-            <div className="ml-[95px] text-start ">
+            <div className="sm:ml-[95px] text-start ">
                 <p className="text-[15px] sm:text-[20px] text-[#00A0AA] font-bold flex">Welcome to DiagnoseWizard</p>
-                <h1 className="text-[40px] leading-[40px] sm:leading-[90px] text-[#000] font-bold flex text-start mt-[20px] sm:text-[70px]">Your Journey to
+                <h1 className="text-[40px] leading-[40px] sm:leading-[90px] text-[#000] font-bold flex text-start mt-[20px] sm:text-[70px]">
+                    Your Journey to
                     Better Health
                     Starts Here</h1>
                 <button
