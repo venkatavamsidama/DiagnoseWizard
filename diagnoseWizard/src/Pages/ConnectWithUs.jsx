@@ -82,7 +82,7 @@ const ConnectWithUs = (props) => {
                         Far far away, behind the word mountains, far from the countries Waganda and Asgard.
                     </p>
                 </div>
-                <div className=" sm:w-[475px] shadow-lg px-[35px] py-[20px] rounded-lg mt-[30px]">
+                <div className="w-[350px] sm:w-[475px] h-[auto] shadow-lg px-[35px] py-[20px] rounded-lg mt-[30px]">
                     <input
                         type="text"
                         placeholder="Name"
@@ -97,7 +97,7 @@ const ConnectWithUs = (props) => {
                         placeholder="Message"
                         value={message}
                         onChange={handleMessageChange}
-                        className="w-[300px] sm:w-[400px] h-[150px] rounded-xl my-[10px] border-[1px] border-[#979797] p-[10px]" />
+                        className="w-[300px]  sm:w-[400px] h-[150px] rounded-xl my-[10px] border-[1px] border-[#979797] p-[10px]" />
                     <button 
                     onClick={handleSendMessage}
                     className="w-[300px] sm:w-[400px] h-[50px] bg-[#18A0A9] text-[#FFFFFF] rounded-xl my-[10px] ">Submit Now</button>

@@ -25,7 +25,7 @@ const DoctorCard = (props) => {
 
     return (
         <div className="h-[306px] mb-[30px]">
-            <div className="text-start w-[408px] h-[306px] overflow-hidden ">
+            <div className="text-start w-[408px] h-[306px] ">
                 <img src={props.imageSrc} alt="hospital image" id="doctorCard" />
 
             </div>
