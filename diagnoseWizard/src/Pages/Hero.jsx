@@ -10,7 +10,7 @@ import { useRef } from 'react'
 const Hero = (props) => {
     const MessageNameSection = useRef(null);
     return (
-        <section>
+        <section className="w-full">
             
             <Home HomeSection={props.HomeSection} />
             <About AboutSection={props.AboutSection} />

@@ -16,7 +16,7 @@ const CarousalCard = (props) => {
 
     return (
         <div className='my-[25px]'>
-            <div className='text-start w-[380px] sm:w-[490px]'>
+            <div className='text-start sm:w-[490px]'>
                 <div className='flex '>
                     <img src="assets/Ellipse 10.svg" alt="" />
                     <img src="assets/Vector(16).svg" alt="" className='translate-x-[-150%]' />

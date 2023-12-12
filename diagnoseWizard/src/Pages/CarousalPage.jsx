@@ -31,23 +31,23 @@ const CarousalPage = (props) => {
                 "comment": `"I'm impressed with the accuracy of the diagnoses on diagnoseWizard. It's like having a virtual doctor at my fingertips!."`,
                 "name": "Mohit Raghav"
             },
-            
+
 
         ])
     return (
 
         <section className='my-[100px]' id='CarousalPage' ref={props.CarousalPageSection}>
-{/* <Swiper navigation={true} modules={[Navigation]} className="mySwiper"> */}
-                <div className='grid grid-cols-1  md:grid-cols-2lg:grid-cols-2 xl:grid-cols-2 w-[1136px] justify-between'>
-                    {
-                        carousalDetails.map((details, index) => {
-                            return (
-                                <CarousalCard key={index} count={details.count} comment={details.comment} name={details.name} />
-                            )
-                        })
-                    }
-                </div>
-        {/* </Swiper> */}
+            {/* <Swiper navigation={true} modules={[Navigation]} className="mySwiper"> */}
+            <div className='grid grid-cols-1  md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 w-full justify-between'>
+                {
+                    carousalDetails.map((details, index) => {
+                        return (
+                            <CarousalCard key={index} count={details.count} comment={details.comment} name={details.name} />
+                        )
+                    })
+                }
+            </div>
+            {/* </Swiper> */}
         </section>
 
 
