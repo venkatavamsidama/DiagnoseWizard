@@ -1,9 +1,9 @@
-# DiagnoseWizard
+# MediGenie
 Introducing a cutting-edge medical diagnostic website that harnesses the power of technology to revolutionize healthcare. 
 This innovative platform seamlessly blends a user-friendly React frontend with the robust capabilities of Flask and Express.js
 on the backend to provide you with accurate disease predictions based on your medical reports.
 
-# Unlocking the Potential : Versatile Uses of Our DiagnoseWizard
+# Unlocking the Potential : Versatile Uses of Our MediGenie
 
 ## Medical Symptom Assessment 
 Users can input their symptoms, medical history, and test results, allowing the website to assist in identifying potential diseases or conditions based on the provided information.
@@ -48,7 +48,7 @@ Users can store and retrieve their medical reports and diagnosis history, aiding
 The website empowers users by providing them with insights and information, enabling them to take a more active role in their healthcare decisions.
 
 # SetUp
- `git clone https://github.com/Kota-Karthik/DiagnoseWizard.git`
+ `git clone https://github.com/venkatavamsidama/MediGenie.git`
 ## Frontend Setup
  `cd diagnoseWizard ` <br>
  `npm install` <br>
